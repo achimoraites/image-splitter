@@ -1,0 +1,24 @@
+{
+  "name": "split-images",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jimp": "^0.6.1"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cyb3rN4u7/image-splitter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Cyb3rN4u7/image-splitter/issues"
+  },
+  "homepage": "https://github.com/Cyb3rN4u7/image-splitter#readme"
+}
