@@ -26,13 +26,15 @@ const imageChunks = async (filename, chunk, step = 0, chunks = []) => {
 
   console.log(chunk, height);
   if(height <= (chunk + step)) {
-    const slice = image.clone().crop(0, step, width, (chunk + step) - (height + 100));
-    const buffer = await slice.getBufferAsync(jimp.MIME_JPEG);
+  //  let slice = image.clone().crop(0, step, width, step);
+    let slice = image.clone().autocrop().crop(0, step, width, (height - chunk));
+   // slice = await slice.autocrop(0);
+    const buffer = await slice.getBufferAsync(jimp.MIME_PNG);
     chunks.push(buffer);
     return chunks;
   } else {
-    const slice = image.clone().crop(0, step, width, chunk);
-    const buffer = await slice.getBufferAsync(jimp.MIME_JPEG);
+    const slice = image.clone().crop(0, step, width, chunk).autocrop();
+    const buffer = await slice.getBufferAsync(jimp.MIME_PNG);
     chunks.push(buffer);
     return imageChunks(filename, chunk + step, step + chunk, chunks);
   }
@@ -45,16 +47,20 @@ const imageChunks = async (filename, chunk, step = 0, chunks = []) => {
 try {
 
   // sliceImage('test.jpg');
-  const img = await jimp.read('test.jpg');
+  const img = await jimp.read('2364.png');
   const {  height, width } = img.bitmap;
-  const split = Math.round(height / 3);
-  const chuncks = await imageChunks('test.jpg',split,0);
+
+  const split = 800;
+ 
+  const chuncks = await imageChunks('2364.png',split,0);
+  console.log('Number of chunks', chuncks.length);
+
   console.log(chuncks);
   const actions = [];
   let i = 0;
   chuncks.forEach(c => {
     i++;
-    actions.push(fs.writeFile(`slice_${i}.jpg`,c));
+    actions.push(fs.writeFile(`slice_${i}.png`,c));
   });
   await Promise.all(actions);
 } catch (e) {
