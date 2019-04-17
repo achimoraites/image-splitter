@@ -9,7 +9,7 @@ try {
   // sliceImage('test.jpg');
 
 //  const image = fs.readFileSync('2364.png');
-  const  chunckSize = 200;
+  const  chunckSize = 20000;
   const chuncks = await imageSplitter.imageToChunks('imgs/test.png',chunckSize);
   console.log('Number of chunks', chuncks.length);
 
