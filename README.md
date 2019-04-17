@@ -4,6 +4,8 @@
 split-images is a simple package that allows you to split an image to chunks 
 the chunks are returned as an Array<Buffer> (Array of buffers) of the image type provided.
 
+## Images
+Image paths and buffers can be used, supported image types are jpeg, png, bmp, tiff and gif.
 
 ## Examples
 ### 
