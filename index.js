@@ -1,15 +1,10 @@
 /* eslint-disable require-jsdoc */
-// const jimp = require('jimp');
 const fs = require('fs');
 const imageSplitter = require('./lib/imageSplitter.js');
 
 (async()=> {
 try {
-
-  // sliceImage('test.jpg');
-
-//  const image = fs.readFileSync('2364.png');
-  const  chunckSize = 20000;
+  const chunckSize = 1000;
   const chuncks = await imageSplitter.imageToChunks('imgs/test.png',chunckSize);
   console.log('Number of chunks', chuncks.length);
 
@@ -24,8 +19,5 @@ try {
 } catch (e) {
   console.log(e);
 }
-
-
-
 
 })();
