@@ -7,6 +7,9 @@ the chunks are returned as an Array<Buffer> (Array of buffers) of the image type
 ### Supported Images
 Image paths, urls and buffers can be used, supported image types are jpeg, png, bmp, tiff and gif.
 
+### npm
+`npm i split-images --save`
+
 ## Methods
 **`imageToChunks(image,chunkSize)`**
 
