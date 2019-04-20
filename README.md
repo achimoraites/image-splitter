@@ -10,6 +10,9 @@ Image paths, urls and buffers can be used, supported image types are jpeg, png, 
 ### npm
 `npm i split-images --save`
 
+### Node versions
+Node >= 7.10
+
 ## Methods
 **`imageToChunks(image,chunkSize)`**
 
