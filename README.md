@@ -16,10 +16,11 @@ Node >= 7.10
 ## Methods
 **`imageToChunks(image,chunkSize)`**
 
-Splits the image horizontaly depending of the chunkSize
+Splits the image depending of the chunkSize
 
 >* **`image`** can be a path, a url or a buffer
 >* **`chunkSize`** the height in pixels each chunk will be 
+>* **`vertical`** set to true for vertical split (default false - horizontal split) 
 
 > returns `Array<Buffer>` 
 

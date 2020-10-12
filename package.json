@@ -1,12 +1,17 @@
 {
   "name": "split-images",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "",
   "main": "lib/imageSplitter.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["split image","split","image to chunks","image splitter"],
+  "keywords": [
+    "split image",
+    "split",
+    "image to chunks",
+    "image splitter"
+  ],
   "author": "Achilles Moraites",
   "license": "MIT",
   "dependencies": {
